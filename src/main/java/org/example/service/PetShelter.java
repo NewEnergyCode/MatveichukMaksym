@@ -5,9 +5,9 @@ import org.example.model.Animals;
 
 import java.io.File;
 import java.io.IOException;
+
 import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
+
 
 public class PetShelter {
 
@@ -19,7 +19,7 @@ public class PetShelter {
         this.extension = extension;
     }
 
-    public void serialize(Map<Integer, Animals>  animals) {
+    public void serialize(Map<Integer, Animals> animals) {
 
         try {
             mapper.writeValue(new File("src/main/resources" + extension), animals);
@@ -29,10 +29,10 @@ public class PetShelter {
 
     }
 
-    public Optional<Map<Integer, Animals>> deserialize() {
+    public Map<Integer, Animals> deserialize() {
 
         try {
-            return Optional.of(mapper.readValue(new File("src/main/resources" + extension), Map.class));
+            return mapper.readValue(new File("src/main/resources" + extension), Map.class);
         } catch (IOException e) {
             System.out.println("Can not created file.");
             return null;

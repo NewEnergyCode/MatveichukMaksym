@@ -1,6 +1,5 @@
 package org.example.model;
 
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 public class Animals {

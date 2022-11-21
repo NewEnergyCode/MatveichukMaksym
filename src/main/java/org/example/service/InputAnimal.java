@@ -10,22 +10,26 @@ import java.util.Scanner;
 
 public class InputAnimal {
 
-    Map<Integer, Animals> petData = new HashMap<>();
-
+    private final Map<Integer, Animals> petData = new HashMap<>();
 
 
     public void mainManu() {
         JsonMapper jsonMapper = new JsonMapper();
         PetShelter petShelter = new PetShelter(jsonMapper, ".json");
-        petShelter.deserialize();
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Press 1 to add Animal");
-        System.out.println("Press 2 to view Animals");
-        System.out.println("Press 3 to delete Animal");
-        System.out.println("Press 4 to exit");
+        System.out.println("Press 0 to load last saved database.");
+        System.out.println("Press 1 to add Animal.");
+        System.out.println("Press 2 to view Animals.");
+        System.out.println("Press 3 to delete Animal.");
+        System.out.println("Press 4 to exit.");
         int number = scanner.nextInt();
 
         switch (number) {
+            case 0 -> {
+                petData.putAll(petShelter.deserialize());
+                mainManu();
+            }
             case 1 -> {
                 petData.put((enumerator()), inputAnimal());
                 mainManu();
@@ -77,14 +81,14 @@ public class InputAnimal {
     }
 
     public int enumerator() {
-        int key = 1;
+        Integer key = 1;
         while (petData.containsKey(key)) {
             key++;
         }
         return key;
     }
 
-    public int removeAnimal() {
+    public Integer removeAnimal() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number animal for delete: ");
