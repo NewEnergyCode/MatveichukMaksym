@@ -1,16 +1,16 @@
 package org.example.service;
 
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import org.example.model.Animals;
+import org.example.model.Animal;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class InputAnimal {
+public class AnimalService {
 
-    private final Map<Integer, Animals> petData = new HashMap<>();
+    private final Map<Integer, Animal> petData = new HashMap<>();
 
 
     public void mainManu() {
@@ -55,7 +55,7 @@ public class InputAnimal {
     }
 
 
-    public Animals inputAnimal() {
+    public Animal inputAnimal() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter animal name: ");
@@ -77,7 +77,7 @@ public class InputAnimal {
         boolean gender = genderInput == 1;
 
 
-        return new Animals(name, breed, new Date(), age, gender);
+        return new Animal(name, breed, new Date(), age, gender);
     }
 
     public int enumerator() {

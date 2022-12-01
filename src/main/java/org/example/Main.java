@@ -1,13 +1,13 @@
 package org.example;
 
-import org.example.service.InputAnimal;
+import org.example.service.AnimalService;
 
 public class Main {
 
     public static void main(String[] args) {
 
 
-        InputAnimal inputAnimal = new InputAnimal();
+        AnimalService inputAnimal = new AnimalService();
 
         inputAnimal.mainManu();
 

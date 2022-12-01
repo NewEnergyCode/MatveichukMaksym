@@ -1,7 +1,7 @@
 package org.example.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.model.Animals;
+import org.example.model.Animal;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class PetShelter {
         this.extension = extension;
     }
 
-    public void serialize(Map<Integer, Animals> animals) {
+    public void serialize(Map<Integer, Animal> animals) {
 
         try {
             mapper.writeValue(new File("src/main/resources" + extension), animals);
@@ -29,7 +29,7 @@ public class PetShelter {
 
     }
 
-    public Map<Integer, Animals> deserialize() {
+    public Map<Integer, Animal> deserialize() {
 
         try {
             return mapper.readValue(new File("src/main/resources" + extension), Map.class);

@@ -1,1 +1,23 @@
-{"1":{"name":"Tom","breed":"Cat","dataOfLastArrived":1669061023957,"age":25,"gender":true}}
+{
+  "1": {
+    "name": "Tom",
+    "breed": "Cat",
+    "dataOfLastArrived": 1669061023957,
+    "age": 25,
+    "gender": true
+  },
+  "1": {
+    "name": "Max",
+    "breed": "Dog",
+    "dataOfLastArrived": 1669145750042,
+    "age": 2,
+    "gender": true
+  },
+  "2": {
+    "name": "Ted",
+    "breed": "Bear",
+    "dataOfLastArrived": 1669143387485,
+    "age": 6,
+    "gender": true
+  }
+}

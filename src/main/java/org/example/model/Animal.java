@@ -2,7 +2,7 @@ package org.example.model;
 
 import java.util.Date;
 
-public class Animals {
+public class Animal {
 
     private String name;
     private String breed;
@@ -10,7 +10,7 @@ public class Animals {
     private int age;
     private boolean gender;
 
-    public Animals(String name, String breed, Date dataOfLastArrived, int age, boolean gender) {
+    public Animal(String name, String breed, Date dataOfLastArrived, int age, boolean gender) {
         this.name = name;
         this.breed = breed;
         this.dataOfLastArrived = dataOfLastArrived;
